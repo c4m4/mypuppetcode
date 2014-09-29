@@ -8,7 +8,7 @@ class sshcon {
 	file { '/root/.ssh/authorized_keys':
   		ensure  => 'file',
   		group   => '0',
-  		mode    => '640',
+  		mode    => '600',
   		owner   => '0',
 	}
 	ssh_authorized_key { 'root@puppetclient.example.com':
