@@ -1,4 +1,3 @@
 node 'puppetclient.example.com' {
-	include sshcon
+	include sshcon, motdclass
 }
-	
