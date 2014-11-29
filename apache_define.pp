@@ -16,12 +16,13 @@ class apache {
         apachevhost { 'myapp1.example.com':
                 servername => 'myapp1.example.com',
                 root => "/srv/www/html/myapp1.example.com"
-	}
+       }
         apachevhost { 'myapp2.example.com':
                 servername => 'myapp2.example.com',
                 root => "/srv/www/html/myapp2.example.com"
-	}
-	Apachevhost['myapp.example.com'] ~> Service['httpd']
-	Apachevhost['myapp1.example.com'] ~> Service['httpd']
-	Apachevhost['myapp2.example.com'] ~> Service['httpd']
+       }
+       Apachevhost['myapp.example.com'] ~> Service['httpd']
+       Apachevhost['myapp1.example.com'] ~> Service['httpd']
+       Apachevhost['myapp2.example.com'] ~> Service['httpd']
 }
+
