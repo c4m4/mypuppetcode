@@ -3,4 +3,7 @@ class apache::pkg ( $pkgname = hiera("pkgs")){
 		  ensure => present,
 		}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98caa9418a13eb0535614f3da200b051d6d85ffc
