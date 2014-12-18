@@ -1,7 +1,14 @@
 class motdclass {
+	$servername = "puppetclient.example.com"
+	$Name = hiera('firstname')
 	file_line { 'motd':
 		path => '/etc/motd',
-		line => 'This is my arch server',
+		line => 'Hello Silvia',
+	}
+	file { 'myfile':
+		path => "/etc/myfile",
+		ensure => file,
+		content => template("first.erb")
 	}
 }
 	

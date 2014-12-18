@@ -1,0 +1,4 @@
+---
+firstname: Emmanuel
+pkgs: [ 'tcpdump', 'apache' ]
+wsvc: "httpd"

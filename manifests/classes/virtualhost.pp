@@ -1,0 +1,9 @@
+#include apache
+class virtualhost {
+        apache::vhost { 
+	'myapp.example.com':  servername => 'myapp.example.com', root => "/srv/www/html/myapp.example.com";
+	'myapp1.example.com':  servername => 'myapp1.example.com', root => "/srv/www/html/myapp1.example.com";
+	'myapp2.example.com':  servername => 'myapp2.example.com', root => "/srv/www/html/myapp2.example.com";
+	'myapp3.example.com':  servername => 'myapp3.example.com', root => "/srv/www/html/myapp3.example.com";
+        }
+}

@@ -10,6 +10,7 @@ class sshcon {
   		group   => '0',
   		mode    => '600',
   		owner   => '0',
+		backup => 'true'
 	}
 	ssh_authorized_key { 'root@puppetclient.example.com':
 	user => 'root',

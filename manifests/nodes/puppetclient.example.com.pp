@@ -1,3 +1,3 @@
 node 'puppetclient.example.com' {
-	include sshcon, motdclass
+	include sshcon, motdclass, virtualhost
 }
