@@ -13,14 +13,14 @@ class osadmins {
                         uid => 1701,
                         gid => 1500,
                         shell => "/bin/bash",
-			state => "absent",
+			state => "present",
                         }
        @users::admins { "rhadmin":
                         name => "rhadmin",
                         uid => 1702,
                         gid => 1500,
                         shell => "/bin/bash",
-			state => "present",
+			state => "absent",
                         }
 
 }
