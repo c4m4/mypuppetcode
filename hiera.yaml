@@ -9,6 +9,6 @@
 :hierarchy:
   - "%{::clientcert}"
   - "%{::osfamily}"
-  - "%{::custom_location}"
-  - "%{::fqdn}"
+  - "%{hostname}"
+  - "nodes/%{::fqdn}"
   - common

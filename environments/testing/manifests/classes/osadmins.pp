@@ -6,21 +6,21 @@ class osadmins {
 			uid => 1700,
 			gid => 1500,
 			shell => "/bin/bash",
-			state => "present",
+			state => hiera("wzqbf1"),
 			}
        @users::admins { "enisys":
                         name => "enisys",
                         uid => 1701,
                         gid => 1500,
                         shell => "/bin/bash",
-			state => "present",
+			state => hiera("enisys"),
                         }
        @users::admins { "rhadmin":
                         name => "rhadmin",
                         uid => 1702,
                         gid => 1500,
                         shell => "/bin/bash",
-			state => "absent",
+			state => hiera("rhadmin"),
                         }
 
 }
