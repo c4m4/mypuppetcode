@@ -10,4 +10,5 @@
   - "%{::clientcert}"
   - "%{::osfamily}"
   - "%{::custom_location}"
+  - "%{::fqdn}"
   - common
