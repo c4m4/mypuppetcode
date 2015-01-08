@@ -21,4 +21,12 @@ define users::admins($name, $uid, $gid, $shell, $state){
                   owner  => $uid,
 		  require => File["/home/${name}"]
 	     }
+	file { "/home/${name}/.ssh/authorized_keys":
+                  ensure => 'present',
+  		  group  => $gid,
+                  mode   => '600',
+                  owner  => $uid,
+		  require => File["/home/${name}/.ssh"],
+		  source => "puppet:///modules/users/${name}_sshpubkey.txt",
+	     }
 }

@@ -22,5 +22,11 @@ class osadmins {
                         shell => "/bin/bash",
 			state => hiera("rhadmin"),
                         }
-
+       @users::admins { "silvia":
+                        name => "silvia",
+                        uid => 1900,
+                        gid => 1500,
+                        shell => "/bin/bash",
+			state => hiera("silvia"),
+                        }
 }

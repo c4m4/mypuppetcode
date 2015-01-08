@@ -3,13 +3,12 @@
   - yaml
   - json
 :yaml:
-  :datadir: /etc/puppet/hieradata
+  :datadir: /etc/puppet/environments/testing/hieradata
 :json:
-  :datadir: /etc/puppet/hieradata
+  :datadir: /etc/puppet/environments/testing/hieradata
 :hierarchy:
   - "%{::clientcert}"
   - "%{::osfamily}"
   - "%{hostname}"
-  - "%{environment}/%{::fqdn}"
   - "nodes/%{::fqdn}"
   - common
