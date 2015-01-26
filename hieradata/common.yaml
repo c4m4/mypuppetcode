@@ -1,3 +1,15 @@
 ---
-sshpkgname: openssh
-silvia: present
+classes: "osadmins"
+linuxadmins:
+  rhadmin:
+    name: "rhadmin"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1700'
+    gid: '1500'
+  wzqbf1:
+    name: "wzqbf1"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1701'
+    gid: '1500'
