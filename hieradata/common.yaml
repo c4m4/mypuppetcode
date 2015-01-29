@@ -1,5 +1,4 @@
 ---
-classes: "osadmins"
 linuxadmins:
   rhadmin:
     name: "rhadmin"
