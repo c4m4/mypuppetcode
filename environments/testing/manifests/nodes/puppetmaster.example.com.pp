@@ -1,3 +1,3 @@
 node 'puppetmaster.example.com' {
-	hiera_include('classes', '[ "profile::users::admins" ]')
+	hiera_include('roles', '[ "role::base" ]')
 }
