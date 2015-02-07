@@ -1,4 +1,8 @@
-define users::admins($name, $uid, $gid, $shell, $state){
+define users::admins($name, $uid, $gid, $shell, $state, $role){
+	 case $role {
+      	    1: { $mgroups = 'admins' }
+            2: { $mgroups = 'dbausers' }
+   	 }
 	user { $name:
 		  name => $name,
 		  ensure => "$state",
@@ -6,7 +10,8 @@ define users::admins($name, $uid, $gid, $shell, $state){
  		  home   => "/home/${name}",
   		  shell  => $shell,
   		  uid    => $uid,
-		  require => [ Group['admins'], File["/home/${name}"], File["/home/${name}/.ssh"] ],
+		  groups => [$mgroups],
+		  require => [ Group['users'], Group[$mgroups], File["/home/${name}"], File["/home/${name}/.ssh"] ],
 	  }
 	file { "/home/${name}":
 		  ensure => 'directory',

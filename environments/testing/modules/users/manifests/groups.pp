@@ -1,6 +1,15 @@
 class users::groups {
-	group { 'admins':
+	group { 'users':
 	  ensure => 'present',
-  	  gid    => '1500',
+  	  gid    => '100',
 	}
+        group { 'admins':
+          ensure => 'present',
+          gid    => '1500',
+        }
+        group { 'dbausers':
+          ensure => 'present',
+          gid    => '1600',
+        }
+
 }

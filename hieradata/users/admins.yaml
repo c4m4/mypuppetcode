@@ -5,10 +5,19 @@ linuxadmins:
     state: "present"
     shell: "/bin/bash"
     uid: '1700'
-    gid: '1500'
+    gid: '100'
+    role: '1'
   wzqbf1:
     name: "wzqbf1"
     state: "present"
     shell: "/bin/bash"
     uid: '1701'
-    gid: '1500'
+    gid: '100'
+    role: '1'
+  silvia:
+    name: "silvia"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1702'
+    gid: '100'
+    role: '1'

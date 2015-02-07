@@ -1,2 +1,2 @@
 ---
-roles: [ "role::base" ]
+roles: [ "role::dba" ]
