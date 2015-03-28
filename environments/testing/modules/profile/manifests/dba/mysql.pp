@@ -1,4 +1,4 @@
 class profile::dba::mysql {
-	include $::users::dba
-	include $::db::mysql
+	include ::profile::users::dba
+	include ::profile::db::mysql
 }

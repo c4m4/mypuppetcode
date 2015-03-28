@@ -1,3 +1,3 @@
 class users {
-	include users::groups
+	include ::users::groups
 }
