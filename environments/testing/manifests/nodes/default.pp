@@ -1,3 +1,4 @@
 node default {
-	hiera_include('roles', '[ "role::base" ]')
+	#hiera_include('roles', 'role::base')
+	include $::role
 }

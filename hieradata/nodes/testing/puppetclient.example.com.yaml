@@ -1,4 +1,4 @@
 ---
 mysql_root_password: 'Password01!'
-classes:
-  - role::dba::mysql
+#classes:
+#  - role::dba::mysql
