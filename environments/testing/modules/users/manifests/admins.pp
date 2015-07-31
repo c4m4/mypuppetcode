@@ -1,37 +1,37 @@
-define users::admins($name, $uid, $gid, $shell, $state, $role){
+define users::admins($login, $uid, $gid, $shell, $state, $role){
 	 case $role {
       	    1: { $mgroups = 'admins' }
             2: { $mgroups = 'dbausers' }
    	 }
-	user { $name:
-		  name => $name,
+	user { $login:
+		  name => $login,
 		  ensure => "$state",
   		  gid    => $gid,
- 		  home   => "/home/${name}",
+ 		  home   => "/home/${login}",
   		  shell  => $shell,
   		  uid    => $uid,
 		  groups => [$mgroups],
-		  require => [ Group['users'], Group[$mgroups], File["/home/${name}"], File["/home/${name}/.ssh"] ],
+		  require => [ Group['users'], Group[$mgroups], File["/home/${login}"], File["/home/${login}/.ssh"] ],
 	  }
-	file { "/home/${name}":
+	file { "/home/${login}":
 		  ensure => 'directory',
   		  group  => $gid,
                   mode   => '700',
                   owner  => $uid,
 	    }
-	file { "/home/${name}/.ssh":
+	file { "/home/${login}/.ssh":
 		  ensure => 'directory',
   		  group  => $gid,
                   mode   => '700',
                   owner  => $uid,
-		  require => File["/home/${name}"]
+		  require => File["/home/${login}"]
 	     }
-	file { "/home/${name}/.ssh/authorized_keys":
+	file { "/home/${login}/.ssh/authorized_keys":
                   ensure => 'present',
   		  group  => $gid,
                   mode   => '600',
                   owner  => $uid,
-		  require => File["/home/${name}/.ssh"],
-		  source => "puppet:///modules/users/${name}_sshpubkey.txt",
+		  require => File["/home/${login}/.ssh"],
+		  source => "puppet:///modules/users/${login}_sshpubkey.txt",
 	     }
 }

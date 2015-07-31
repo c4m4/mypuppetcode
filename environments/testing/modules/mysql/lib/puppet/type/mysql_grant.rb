@@ -4,6 +4,7 @@ Puppet::Type.newtype(:mysql_grant) do
   ensurable
 
   autorequire(:file) { '/root/.my.cnf' }
+  autorequire(:mysql_user) { self[:user] }
 
   def initialize(*args)
     super
@@ -70,14 +71,21 @@ Puppet::Type.newtype(:mysql_grant) do
       elsif matches = /^([0-9a-zA-Z$_]*)@([\w%\.:\-]+)/.match(value)
         user_part = matches[1]
         host_part = matches[2]
-      elsif matches = /^(?:(?!['`"]).*)([^0-9a-zA-Z$_]).*@.+$/.match(value)
-        # does not start with a quote, but contains a special character
-        raise(ArgumentError, "Database user #{value} must be properly quoted, invalid character: '#{matches[1]}'")
+      elsif matches = /^((?!['`"]).*[^0-9a-zA-Z$_].*)@(.+)$/.match(value)
+        user_part = matches[1]
+        host_part = matches[2]
       else
         raise(ArgumentError, "Invalid database user #{value}")
       end
 
-      raise(ArgumentError, 'MySQL usernames are limited to a maximum of 16 characters') unless user_part.size <= 16
+      mysql_version = Facter.value(:mysql_version)
+      unless mysql_version.nil?
+        if Puppet::Util::Package.versioncmp(mysql_version, '10.0.0') < 0 and user_part.size > 16
+          raise(ArgumentError, 'MySQL usernames are limited to a maximum of 16 characters')
+        elsif Puppet::Util::Package.versioncmp(mysql_version, '10.0.0') > 0 and user_part.size > 80
+          raise(ArgumentError, 'MySQL usernames are limited to a maximum of 80 characters')
+        end
+      end
     end
   end
 

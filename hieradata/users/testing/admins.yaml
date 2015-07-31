@@ -1,21 +1,21 @@
 ---
 linuxadmins:
   rhadmin:
-    name: "rhadmin"
+    login: "rhadmin"
     state: "present"
     shell: "/bin/bash"
     uid: '1700'
     gid: '100'
     role: '1'
   wzqbf1:
-    name: "wzqbf1"
+    login: "wzqbf1"
     state: "present"
     shell: "/bin/bash"
     uid: '1701'
     gid: '100'
     role: '1'
   silvia:
-    name: "silvia"
+    login: "silvia"
     state: "present"
     shell: "/bin/bash"
     uid: '1702'
