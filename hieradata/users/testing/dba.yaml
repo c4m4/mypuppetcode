@@ -1,21 +1,21 @@
 ---
 mysqladmins:
   paolo:
-    name: "paolo"
+    login: "paolo"
     state: "present"
     shell: "/bin/bash"
     uid: '1703'
     gid: '100'
     role: '2'
   marco:
-    name: "marco"
+    login: "marco"
     state: "present"
     shell: "/bin/bash"
     uid: '1704'
     gid: '100'
     role: '2'
   juan:
-    name: "juan"
+    login: "juan"
     state: "present"
     shell: "/bin/bash"
     uid: '1705'
