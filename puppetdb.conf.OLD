@@ -1,0 +1,4 @@
+[main]
+server_urls = https://puppetdb.example.com:8081
+soft_write_failure = false
+server_url_timeout = 60

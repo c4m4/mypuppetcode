@@ -3,8 +3,8 @@ define users::admins($login, $uid, $gid, $shell, $state, $role){
       	    1: { $mgroups = 'admins' }
             2: { $mgroups = 'dbausers' }
    	 }
-	user { $login:
-		  name => $login,
+	user { "${login}":
+		  name => "${login}",
 		  ensure => "$state",
   		  gid    => $gid,
  		  home   => "/home/${login}",
