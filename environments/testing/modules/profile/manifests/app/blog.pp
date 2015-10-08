@@ -9,12 +9,12 @@ class profile::app::blog {
     install_dir => '/var/www/html',
   }
 
-  anchor { 'profile::app::blog::begin': } ->
-     class { '::apache': } ->
-     class { '::profile::app::db': } ->
-     Class['wordpress'] ->
-  anchor { '::profile::app::blog::end': }
 
-  class { '::apache::mod::php': }
-  class { '::mysql::bindings': php_enable => true, }
+  class { '::apache': } 
+  class { '::apache::mod::php': } 
+
+  anchor { 'profile::app::blog::begin': } ->
+     class { '::profile::app::db': } ->
+     class { '::mysql::bindings': php_package_name => 'php53-mysql', php_enable => true} ->
+  anchor { '::profile::app::blog::end': }
 }
