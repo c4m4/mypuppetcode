@@ -1,6 +1,7 @@
 class profile::db::mysql {
 	class { '::mysql::server':
-             root_password    => hiera('mysql_root_password','dbpassword'),
-             override_options => { 'mysqld' => { 'max_connections' => '1024' } }
+           root_password    => hiera('mysql_root_password','dbpassword'),
+           override_options => { 'mysqld' => { 'max_connections' => '1024' } },
+           require => Class['profile::base']
 	}
 }

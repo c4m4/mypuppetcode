@@ -1,0 +1,6 @@
+class role::dba::mysql {
+  anchor { 'role::dba::mysql::begin': } ->
+	  class { '::role::base': } ->
+	  class { '::profile::dba::mysql': } ->
+  anchor { 'role::dba::mysql::end': }
+}

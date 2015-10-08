@@ -1,0 +1,15 @@
+---
+:backends:
+  - yaml
+  - json
+:yaml:
+  :datadir: /home/c0m0/programmin/puppet/hieradata
+:json:
+  :datadir: /etc/puppet/hieradata
+:hierarchy:
+  - "%{::clientcert}"
+  - "%{::osfamily}"
+  - "%{hostname}"
+  - "nodes/%{::fqdn}"
+  - common
+

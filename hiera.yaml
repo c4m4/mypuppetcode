@@ -1,1 +1,8 @@
-/etc/hiera.yaml
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: '/vagrant/puppet/hieradata'
+:hierarchy:
+  - common
+
