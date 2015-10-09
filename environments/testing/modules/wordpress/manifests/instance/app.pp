@@ -65,7 +65,7 @@ define wordpress::instance::app (
 
   ## Download and extract
   exec { "Download wordpress ${install_url}/wordpress-${version}.tar.gz to ${install_dir}":
-    command => "wget --no-check-certificat ${install_url}/wordpress-${version}.tar.gz",
+    command => "wget --no-check-certificate ${install_url}/wordpress-${version}.tar.gz",
     creates => "${install_dir}/wordpress-${version}.tar.gz",
     require => File[$install_dir],
     user    => $wp_owner,

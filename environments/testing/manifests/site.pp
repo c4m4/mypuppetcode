@@ -24,10 +24,7 @@ class myvirt {
 node default {
         #hiera_include('roles', 'role::base')
         include $::role
-<<<<<<< HEAD
 	      #include myvirt, mymon
-=======
->>>>>>> blogrole
 }
 
 node 'puppetclient.example.com' {

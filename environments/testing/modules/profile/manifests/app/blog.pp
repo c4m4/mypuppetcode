@@ -7,6 +7,8 @@ class profile::app::blog {
     create_db   => false,
     create_db_user => false,
     install_dir => '/var/www/html',
+    wp_multisite   => false,
+    wp_site_domain => 'blog.domain.com',
   }
 
 

@@ -1,0 +1,18 @@
+{
+  "name": "role",
+  "version": "1.0.0",
+  "author": "Emmanuel Gelati",
+  "summary": "Puppet module for using role/profiles rule",
+  "license": "GPL",
+  "source": "https://github.com/c4m4/mypuppetcode",
+  "project_page": "https://github.com/c4m4/mypuppetcode",
+  "issues_url": "https://github.com/c4m4/mypuppetcode/issues",
+  "description": "You need to be sure the module listed below are installed",
+  "dependencies": [
+    {"name":"puppetlabs/concat","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs/mysql","version_requirement":">= 2.1.0"},
+    {"name":"puppetlabs/stdlib","version_requirement":">= 2.3.1"},
+    {"name":"puppetlabs/ntp","version_requirement":">= 2.3.1"},
+    {"name":"puppetlabs/apache","version_requirement":">= 1.6.0"}
+  ]
+}

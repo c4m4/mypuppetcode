@@ -1,16 +1,7 @@
 ---
 :backends:
-<<<<<<< HEAD
     - yaml
 :yaml:
     :datadir: '/vagrant/puppet/hieradata'
     :hierarchy:
         - common
-=======
-  - yaml
-:yaml:
-  :datadir: '/vagrant/puppet/hieradata'
-:hierarchy:
-  - common
-
->>>>>>> blogrole
