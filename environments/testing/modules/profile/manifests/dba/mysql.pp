@@ -1,4 +1,5 @@
 class profile::dba::mysql {
-	include ::profile::users::dba
-	include ::profile::db::mysql
+    anchor { 'profile::dba::mysql::begin': } ->
+	    class { '::profile::db::mysql': } ->
+    anchor { 'profile::dba::mysql::end': }
 }

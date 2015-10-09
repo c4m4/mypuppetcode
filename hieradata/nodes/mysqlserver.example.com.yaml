@@ -1,0 +1,46 @@
+---
+linuxadmins:
+  rhadmin:
+    login: "rhadmin"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1700'
+    gid: '100'
+    role: '1'
+  wzqbf1:
+    login: "wzqbf1"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1701'
+    gid: '100'
+    role: '1'
+  silvia:
+    login: "silvia"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1702'
+    gid: '100'
+    role: '1'
+
+mysqladmins:
+  paolo:
+    login: "paolo"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1703'
+    gid: '100'
+    role: '2'
+  marco:
+    login: "marco"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1704'
+    gid: '100'
+    role: '2'
+  juan:
+    login: "juan"
+    state: "present"
+    shell: "/bin/bash"
+    uid: '1705'
+    gid: '100'
+    role: '2'

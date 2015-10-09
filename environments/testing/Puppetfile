@@ -3,6 +3,7 @@ forge 'https://forgeapi.puppetlabs.com'
 moduledir '/etc/puppet/environments/testing/modules'
 
 mod 'puppetlabs/stdlib'
+mod 'puppetlabs/ntp'
 mod 'nanliu/staging'
 mod 'puppetlabs/concat', '1.2.3'
 mod 'puppetlabs/mysql', '3.4.0'

@@ -1,0 +1,5 @@
+class role::dba::mysql {
+	include ::role::base
+	include ::profile::dba::mysql
+  Class['::role::base'] -> Class['::profile::dba::mysql']
+}
