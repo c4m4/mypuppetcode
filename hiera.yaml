@@ -1,7 +1,7 @@
 ---
 :backends:
-    - yaml
+  - yaml
 :yaml:
-    :datadir: '/vagrant/puppet/hieradata'
-    :hierarchy:
-        - common
+  :datadir: '/vagrant/puppet/hieradata'
+:hierarchy:
+  - common
