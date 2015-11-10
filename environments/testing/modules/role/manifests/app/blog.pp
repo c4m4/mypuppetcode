@@ -1,4 +1,4 @@
 class role::app::blog {
-    class { '::profile::base': }
-    class { '::profile::app::blog':} 
+    include '::profile::base'
+    include '::profile::app::blog'
 }
