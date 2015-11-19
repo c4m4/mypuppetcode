@@ -46,3 +46,10 @@ mysqladmins:
     groups: 'dbausers'
 
 mysql_root_password: 'strongpassword'
+
+mysqldbs:
+    blogdb:
+      user: 'bloguser'
+      password: 'blogpassword'
+      host: 'localhost'
+      grant:  ['ALL']

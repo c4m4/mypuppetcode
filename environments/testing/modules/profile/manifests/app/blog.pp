@@ -16,7 +16,7 @@ class profile::app::blog {
   class { '::apache::mod::php': } 
 
   anchor { 'profile::app::blog::begin': } ->
-     class { '::profile::app::db': } ->
+     class { '::profile::dba::mysql': } ->
      class { '::mysql::bindings': php_package_name => 'php53-mysql', php_enable => true} ->
   anchor { '::profile::app::blog::end': }
 }
