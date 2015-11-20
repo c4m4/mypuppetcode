@@ -1,8 +1,6 @@
 class profile::app::blog {
-
   class { '::apache': } 
 
-  class { '::profile::dba::mysql': } ->
   class { '::mysql::bindings': php_package_name => 'php53-mysql', php_enable => true} ->
   class { '::apache::mod::php': }  ->
 
