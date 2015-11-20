@@ -53,3 +53,8 @@ mysqldbs:
       password: 'blogpassword'
       host: 'localhost'
       grant:  ['ALL']
+    monitordb:
+      user: 'monitoruser'
+      password: 'monitorpassword'
+      host: 'localhost'
+      grant:  ['ALL']
