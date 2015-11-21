@@ -1,7 +1,7 @@
 define users::admins($login, $uid, $gid, $shell, $state, $groups){
-  user { "$login":
-      name    => $login,
+  user { $login:
       ensure  => $state,
+      name    => $login,
       gid     => $gid,
       home    => "/home/${login}",
       shell   => $shell,
@@ -23,11 +23,11 @@ define users::admins($login, $uid, $gid, $shell, $state, $groups){
       require => File["/home/${login}"]
       }
   file { "/home/${login}/.ssh/authorized_keys":
-        ensure => 'present',
-        group  => $gid,
-        mode   => '0600',
-      owner    => $uid,
-      require  => File["/home/${login}/.ssh"],
-      source   => "puppet:///modules/users/${login}_sshpubkey.txt",
+      ensure  => 'present',
+      group   => $gid,
+      mode    => '0600',
+      owner   => $uid,
+      require => File["/home/${login}/.ssh"],
+      source  => "puppet:///modules/users/${login}_sshpubkey.txt",
       }
 }
