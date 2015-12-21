@@ -1,5 +1,5 @@
 class role::dba::mysql {
-    include '::profile::base'
-    include '::profile::users::dba'
-    class { '::profile::dba::mysql': require => [Class['profile::base'], Class['profile::users::dba']] }
+  anchor { '::role::dba::mysql::begin': } ->
+    class { '::profile::base': } ->
+  anchor { '::role::dba::mysql::end': } -> class { '::profile::dba::mysql': }
 }
