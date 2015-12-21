@@ -1,5 +1,6 @@
 class role::app::blog {
-    include '::profile::base'
-    include '::profile::dba::mysql'
-    class { '::profile::app::blog': require => [Class['::profile::base'], Class['::profile::dba::mysql']] }
+  anchor { '::role::app::blog::begin': } ->
+    class { '::profile::base': } ->
+    class { '::profile::dba::mysql': } ->
+  anchor { '::role::app::blog::end': } -> class { '::profile::app::blog': }
 }
