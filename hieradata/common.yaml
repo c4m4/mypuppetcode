@@ -44,6 +44,8 @@ mysqladmins:
     uid: '1705'
     gid: '100'
     groups: 'dbausers'
+  newuser: { login: "newuser", state: "present", shell: "/bin/bash", uid: "1706", gid: "100", groups: "dbausers" }
+  emmanuel: { login: "emmanuel", state: "present", shell: "/bin/bash", uid: "1707", gid: "100", groups: "dbausers" }
 
 mysql_root_password: 'strongpassword'
 
@@ -58,3 +60,13 @@ mysqldbs:
       password: 'monitorpassword'
       host: 'localhost'
       grant:  ['ALL']
+    keystone:
+      user: 'keystone'
+      password: 'openstack'
+      host: '%'
+      grant: ['ALL']
+    glance:
+      user: 'glance'
+      password: 'openstack'
+      host: '%'
+      grant: ['ALL']
