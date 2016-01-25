@@ -50,23 +50,23 @@ mysqladmins:
 mysql_root_password: 'strongpassword'
 
 mysqldbs:
-    blogdb:
-      user: 'bloguser'
-      password: 'blogpassword'
-      host: 'localhost'
-      grant:  ['ALL']
-    monitordb:
-      user: 'monitoruser'
-      password: 'monitorpassword'
-      host: 'localhost'
-      grant:  ['ALL']
-    keystone:
-      user: 'keystone'
-      password: 'openstack'
-      host: '%'
-      grant: ['ALL']
-    glance:
-      user: 'glance'
-      password: 'openstack'
-      host: '%'
-      grant: ['ALL']
+  blogdb:
+    user: 'bloguser'
+    password: 'blogpassword'
+    host: 'localhost'
+    grant:  ['ALL']
+  monitordb:
+    user: 'monitoruser'
+    password: 'monitorpassword'
+    host: 'localhost'
+    grant:  ['ALL']
+  keystone:
+    user: 'keystone'
+    password: 'openstack'
+    host: '%'
+    grant: ['ALL']
+  glance:
+    user: 'glance'
+    password: 'openstack'
+    host: '%'
+    grant: ['ALL']
